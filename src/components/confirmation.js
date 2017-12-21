@@ -17,8 +17,7 @@ export default class ConfirmationModal extends React.Component{
   }
 
   render(){
-    debugger;
-    const  button = <button onClick={()=>this.setState({visible:true})} className="btn btn-floating red"><i className="material-icons">delete_forever</i></button>
+    const  button = <button onClick={()=>this.setState({visible:true})} className="btn red"><i className="material-icons">delete_forever</i></button>
     if(this.state.visible){
       return(
         <div>
