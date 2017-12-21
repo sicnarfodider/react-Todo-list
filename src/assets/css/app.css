@@ -3,8 +3,32 @@
     src: url(../fonts/blocky.ttf);
 }
 
+@font-face {
+  font-family: Audiowide;
+  src: url(../fonts/Audiowide.ttf);
+}
+h1, h3 {
+  font-family: 'blocky';
+  color : white;
+  text-shadow: 5px 5px grey;
+}
+input{
+  color: white;
+}
+input::placeholder{
+  color: rgba(255,255,255,0.7);
+}
+.collection .collection-item, .card{
+  background-color: transparent!important;
+  color: white;
+}
+
+.btn {
+  font-family: 'blocky';
+}
 body {
     margin: 0;
+    background-image: url(../images/wallpaper.jpg) ;
 }
 
 .app {

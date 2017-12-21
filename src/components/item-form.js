@@ -5,7 +5,7 @@ export default class ItemForm extends Component{
     super(props)
 
       this.state={
-        task: '',
+        title: '',
         details: ''
       }
       this.handleAddItem=this.handleAddItem.bind(this);
@@ -14,18 +14,18 @@ export default class ItemForm extends Component{
     e.preventDefault();
     this.props.add(this.state);
     this.setState({
-      task: '',
+      title: '',
       details: ''
     });
   }
 
   render(){
-    const {task, details} = this.state;
+    const {title, details} = this.state;
     return(
       <form onSubmit={this.handleAddItem}>
-        <input type="text" placeholder="Task" value={task} onChange={({target})=>this.setState({task: target.value})}/>
+        <input type="text" placeholder="Task" value={title} onChange={({target})=>this.setState({title: target.value})}/>
         <input type="text" placeholder="Details" value={details} onChange={({target})=>this.setState({details: target.value})}/>
-        <button className="btn blue darken-4">Add Task</button>
+        <button className="btn blue lighten-3">Add Task</button>
       </form>
     )
   }

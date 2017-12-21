@@ -5,20 +5,20 @@ import Modal from './confirmation';
 
 export default class List extends React.Component{
   render(){
-    const {task, complete, index} = this.props.task
+    const {title, complete, index} = this.props.task
 
     const style = {
       textDecoration : 'line-through',
-      color: '#ddd'
+      color: '#888'
     }
     return(
       <li className='collection-item row'>
         <div style={complete ? style : {}} className="col s9">
-          {task}
+          {title}
         </div>
         <div className="col s3 center-align ">
-          <Modal callBack={()=>this.props.del(this.props.index)}/>
-          <button onClick={()=>this.props.complete(this.props.index)} className={`ml-2 btn green waves-effect waves-light btn-floating ${complete ?'yellow': 'green'}`}><i className="material-icons">{complete ? 'undo' : 'check'}</i></button>
+          <button onClick={()=>this.props.complete(this.props.task._id)} className={`ml-2 btn green waves-effect waves-light ${complete ?'yellow': 'green'}`}><i className="material-icons">{complete ? 'undo' : 'check'}</i></button>
+          <Modal callBack={()=>this.props.del(this.props.task._id)}/>
         </div>
         </li>
     )
